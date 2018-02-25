@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAndMongoDB", "CoreAndMongoDB\CoreAndMongoDB.csproj", "{7B28D104-60D4-4628-BAA8-06087B237457}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAndMongoDB.Model", "CoreAndMongoDB.Model\CoreAndMongoDB.Model.csproj", "{639DC423-245C-496C-8C71-55924B9BF37A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAndMongoDB.UI", "CoreAndMongoDB.UI\CoreAndMongoDB.UI.csproj", "{73AA9527-C0FE-4962-8F82-D74E0B8F30CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B28D104-60D4-4628-BAA8-06087B237457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B28D104-60D4-4628-BAA8-06087B237457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B28D104-60D4-4628-BAA8-06087B237457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B28D104-60D4-4628-BAA8-06087B237457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{639DC423-245C-496C-8C71-55924B9BF37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{639DC423-245C-496C-8C71-55924B9BF37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{639DC423-245C-496C-8C71-55924B9BF37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{639DC423-245C-496C-8C71-55924B9BF37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AA9527-C0FE-4962-8F82-D74E0B8F30CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AA9527-C0FE-4962-8F82-D74E0B8F30CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AA9527-C0FE-4962-8F82-D74E0B8F30CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AA9527-C0FE-4962-8F82-D74E0B8F30CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56CB50A2-8D66-4292-826E-AB97EAD8F375}
+	EndGlobalSection
+EndGlobal
