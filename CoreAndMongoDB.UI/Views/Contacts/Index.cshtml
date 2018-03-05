@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CoreAndMongoDB.Model.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+@*<i class="fas fa-camera-retro"></i>*@
+<p>
+    <a href="@Url.Action("Create","Contacts")" class="btn btn-default"><i class="fas fa-plus"></i> Create New</a>
+</p>
+<table class="table table-striped">
+    <thead class="bg-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit","Contacts",new { id=item.ID})" class="btn btn-default"><i class="far fa-edit"></i>Düzenle</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-default"><i class="far fa-trash-alt"></i>Sil</a>
+                                    </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+
+    <script>
+        $(function () {
+            var succesMessage = '@TempData["SuccessMessage"]'
+            if (succesMessage != '')
+                alert(succesMessage);
+        });
+
+    </script>
+}
