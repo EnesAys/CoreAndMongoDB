@@ -77,19 +77,7 @@ namespace CoreAndMongoDB.UI.Controllers
         }
         #endregion
 
-        //#region Delete
-        //public IActionResult Delete(string id) {
-        //    HttpResponseMessage response = GlobalVariables.WebApiClient.DeleteAsync("contact/" + id).Result;
-        //    if (response.Content.ReadAsAsync<bool>().Result)
-        //    {
-        //        TempData["SuccessMessage"] = "Deleted Succesfully";
-        //    }
-        //    else
-        //        TempData["SuccessMessage"] = "Fail";
-        //    return RedirectToAction("Index");
-        //}
-
-        //#endregion
+        #region Delete
         public IActionResult Delete(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -124,6 +112,7 @@ namespace CoreAndMongoDB.UI.Controllers
             }
             return RedirectToAction("Index");
         }
+        #endregion
 
     }
 }

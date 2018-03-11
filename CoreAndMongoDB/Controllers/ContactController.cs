@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace CoreAndMongoDB.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
-    public class ContactController
+    public class ContactController:Controller
     {
 
         #region Ctor
@@ -25,7 +26,18 @@ namespace CoreAndMongoDB.Controllers
 
 
         #region GetAll
-        //For JWT Token Authorization   [Authorize]
+        /// <summary>
+        /// Gets All Contacts Item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /contact
+        ///
+        /// </remarks>
+        /// <returns>Return Contact Items</returns>
+        
+        //[Authorize]
         [HttpGet]
         public async Task<IEnumerable<Contact>> Get()
         {
@@ -39,6 +51,18 @@ namespace CoreAndMongoDB.Controllers
         #endregion
 
         #region GetById
+        /// <summary>
+        /// Gets a spesific Contacts Item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /contact/{id}
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Return spesific Contact Item</returns>
+
 
         [HttpGet("{id}")]
         public async Task<Contact> Get(string id)
@@ -50,6 +74,25 @@ namespace CoreAndMongoDB.Controllers
         #endregion
 
         #region AddContact
+
+        /// <summary>
+        /// Creates a Contact Item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /contact
+        ///     {
+        ///        "Name": "Enes",
+        ///        "Surname":"Ays.",
+        ///        "Adress":"BEŞİKTAŞ",
+        ///        "Mail": "enes@enes.com",
+        ///        "Phone": "05555555555"
+        ///     }
+        ///
+        /// </remarks>
+        /// <returns>Returns True or False. If response is true then request is 'Success' </returns>
+
 
         [HttpPost]
         public async Task<bool> Post([FromBody]Contact contact)
@@ -75,6 +118,25 @@ namespace CoreAndMongoDB.Controllers
         #endregion
 
         #region UpdateContact
+
+        /// <summary>
+        /// Update a Contact Item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///   PUT/contact/{id}
+        ///     {
+        ///        "Name": "Enes",
+        ///        "Surname":"Ays.",
+        ///        "Adress":"BEŞİKTAŞ",
+        ///        "Mail": "enes@enes.com",
+        ///        "Phone": "05555555555"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Returns True or False. If response is true then request is 'Success' </returns>
 
         [HttpPut("{id}")]
         public async Task<bool> Put(string id,[FromBody]Contact contact)
@@ -106,7 +168,20 @@ namespace CoreAndMongoDB.Controllers
         }
         #endregion
 
+
+
         #region DeleteContact
+        /// <summary>
+        /// Delete a Contact Item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///   DELETE/contact/{id}
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Returns True or False. If response is true then request is 'Success' </returns>
 
         [HttpDelete("{id}")]
         public async Task<bool> Delete(string id)
