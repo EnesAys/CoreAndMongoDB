@@ -36,9 +36,12 @@ namespace CoreAndMongoDB.Controllers
         ///
         /// </remarks>
         /// <returns>Return Contact Items</returns>
-        
+        /// <response code="200">Returns Contacts </response>
+
         //[Authorize]
+
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Contact>), 200)]
         public async Task<IEnumerable<Contact>> Get()
         {
             var contacts = await _contactRepository.GetAll();
@@ -62,9 +65,11 @@ namespace CoreAndMongoDB.Controllers
         /// </remarks>
         /// <param name="id"></param>
         /// <returns>Return spesific Contact Item</returns>
+        /// <response code="200">Return spesific Contact Item </response>
 
 
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(Contact), 200)]
         public async Task<Contact> Get(string id)
         {
             var contact = await _contactRepository.Get(id) ?? throw new ArgumentException("ID alınamadı");
@@ -92,9 +97,11 @@ namespace CoreAndMongoDB.Controllers
         ///
         /// </remarks>
         /// <returns>Returns True or False. If response is true then request is 'Success' </returns>
+        /// <response code="200">Returns True or False. If response is true then request is 'Success' </response>
 
 
         [HttpPost]
+        [ProducesResponseType(typeof(bool), 200)]
         public async Task<bool> Post([FromBody]Contact contact)
         {
             bool isSucced;
@@ -137,8 +144,10 @@ namespace CoreAndMongoDB.Controllers
         /// </remarks>
         /// <param name="id"></param>
         /// <returns>Returns True or False. If response is true then request is 'Success' </returns>
+        /// <response code="200">Returns True or False. If response is true then request is 'Success' </response>
 
         [HttpPut("{id}")]
+        [ProducesResponseType(typeof(bool), 200)]
         public async Task<bool> Put(string id,[FromBody]Contact contact)
         {
             bool isSucceed;
@@ -182,8 +191,10 @@ namespace CoreAndMongoDB.Controllers
         /// </remarks>
         /// <param name="id"></param>
         /// <returns>Returns True or False. If response is true then request is 'Success' </returns>
+        /// <response code="200">Returns True or False. If response is true then request is 'Success' </response>
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(bool), 200)]
         public async Task<bool> Delete(string id)
         {
 
